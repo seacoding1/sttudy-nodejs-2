@@ -5,8 +5,8 @@ const router = express.Router(); //express를 실행시키기 위한 변수
 
 const controller = require('./home.controller');
 
-router.get('/', controller.hello);
-
-router.get('/login', controller.login);
+router.get('/', controller.output.hello);
+router.get('/login', controller.output.login);
+router.post('/login', controller.process.login);
 
 module.exports = router;

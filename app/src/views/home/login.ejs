@@ -10,8 +10,34 @@
     <title>Document</title>
 </head>
 <body>
-    <input id="id" type="text" placeholder="id"><br/>
-    <input id="pw" type="text" placeholder="pw"><br/>
-    <button>로그인</button>
+    <div class="loginBox">
+        <input id="id" class="input" type="text" placeholder="id"><br/>
+        <input id="pw" class="input" type="text" placeholder="pw"><br/>
+        <button>로그인</button>
+    </div>  
 </body>
+<style>
+    .loginBox {
+                width: 250px;
+                border: 1px solid #dedede;
+                border-radius: 15px;
+                margin: 0 auto;
+                padding: 25px;
+              }
+    .loginBox .input {
+                        width:95%;
+                        height:25px;
+                        border: 1px solid #dedede;
+                        border-radius: 5px;
+                        margin-bottom: 10px;
+                    }
+
+    button {
+            width: 97%;
+            border: none;
+            background-color: #ebebeb;
+            border-radius: 5px;
+            height:30px;
+    }
+</style>
 </html>

@@ -26,6 +26,22 @@ class userStorage {
            //초기값 (이게 지정 안 되어 있으면 newUsers가 초기값)
         return newUsers;
     }
+
+    static getUserInfo(id){
+        const users = this.#users;
+        //받아온 id가 있는 인덱스 번호
+        const idx = users.id.indexOf(id);
+        //users의 key값들만 배열로 담기
+        const usersKeys = Object.keys(users); // =>ㄴ [id, pw, name]
+
+        const userInfo = usersKeys.reduce((newUser, info) => {
+            newUser[info] = users[info][idx];
+            return newUser;
+        }, {});
+
+        return userInfo; 
+    }
+
 }
 
 module.exports = userStorage;

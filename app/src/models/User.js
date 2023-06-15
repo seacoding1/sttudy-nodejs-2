@@ -28,6 +28,13 @@ class User {
         
     }
 
+    register(){
+
+        const body = this.body;
+
+    }
+
+
 }
 
 module.exports = User;

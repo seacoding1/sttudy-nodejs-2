@@ -9,6 +9,10 @@ const output = {
     
     login : function (req, res){
         res.render('home/login');
+    },
+    
+    register : function (req, res){
+        res.render('home/register');
     }  
 
 }
@@ -22,8 +26,16 @@ const process = {
         const user = new User(req.body);
         //user객체 안에 login메서드 실행한 값 담기
         const response = user.login();
-        console.log(response);
+        return res.json(response);
 
+    },
+
+    register : (req, res) => {
+
+        //요청한 값을 담은 객체(?)생성
+        const user = new User(req.body);
+        //user객체 안에 login메서드 실행한 값 담기
+        const response = user.login();
         return res.json(response);
 
     }

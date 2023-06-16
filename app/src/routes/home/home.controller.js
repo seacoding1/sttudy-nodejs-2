@@ -20,12 +20,12 @@ const output = {
 
 //login API
 const process = {
-    login : (req, res) => {
+    login : async (req, res) => {
 
         //요청한 값을 담은 객체(?)생성
         const user = new User(req.body);
         //user객체 안에 login메서드 실행한 값 담기
-        const response = user.login();
+        const response = await user.login();
         return res.json(response);
 
     },

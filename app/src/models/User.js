@@ -7,7 +7,7 @@ class User {
         this.body = body;
     }
 
-    login(){
+    async login(){
         //id와 pw라는 변수로 바로 받음
         // const { id, pw } = userStorage.getUsers("id", "pw");
         // console.log(id);
@@ -16,7 +16,7 @@ class User {
         //["1234", "1234", "1234"]
 
         const client = this.body;
-        const { id, pw } = userStorage.getUserInfo(client.id);
+        const { id, pw } = await userStorage.getUserInfo(client.id);
 
         if(id) {
             if(id === client.id && pw === client.pw){
@@ -30,9 +30,8 @@ class User {
 
     register(){
         const client = this.body;
-        console.log(client);
-        // userStorage.save(client);
-        // const body = this.body;
+        const response = userStorage.save(client);
+        return response;
     }
 
 

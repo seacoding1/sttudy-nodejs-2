@@ -3,6 +3,9 @@
 //모듈
 const express = require('express');//express 모듈을 요청
 const bodyParser = require('body-parser');//body-parser 모듈을 요청
+//const dotenv = require("dotenv");
+//dotenv.config(); //dotenv 모듈 동작 -> .env파일에 등록된 변수들을 nodejs에서 접근할 수 있도록 process.env에 등록시켜준다.
+
 const app = express(); //express를 실행시키기 위한 변수
 
 //라우팅

@@ -15,11 +15,11 @@ class User {
         // console.log(pw);
         //["1234", "1234", "1234"]
 
-        const body = this.body;
-        const { id, pw } = userStorage.getUserInfo(body.id);
+        const client = this.body;
+        const { id, pw } = userStorage.getUserInfo(client.id);
 
         if(id) {
-            if(id === body.id && pw === body.pw){
+            if(id === client.id && pw === client.pw){
                 return { success: true };
             }
             return { success: false, msg: "비밀번호가 틀렸습니다."};
@@ -29,9 +29,10 @@ class User {
     }
 
     register(){
-
-        const body = this.body;
-
+        const client = this.body;
+        console.log(client);
+        // userStorage.save(client);
+        // const body = this.body;
     }
 
 

@@ -10,20 +10,19 @@ const userName = document.querySelector("#name"),
 regBtn.addEventListener("click", register);
 
 function register() {
+    if(!id.value) return alert('아이디를 입력해주세요');
+    if( pw.value !== confirmPw.value){
+        error.style.display = 'block';
+        error.innerHTML = "비밀번호가 일치하지 않습니다."; 
+        return;   
+    }
 
     const req = {
         userName : userName.value,
         id : id.value,
         pw : pw.value,
-        confirmPw : confirmPw.value
     };
-    console.log(req.id);
 
-    if( req.pw !== req.confirmPw){
-        error.style.display = 'block';
-        error.innerHTML = "비밀번호가 일치하지 않습니다.";
-        
-    } else {
         fetch('/register', {
             method: "POST", //Restful API와 관련있음 공부하기..
             //내가 전달하는 데이터가 json 데이터라고 알려주기 위해 넣음
@@ -43,9 +42,8 @@ function register() {
             console.error(new Error("회원가입 중 에러 발생"));
           });
     
-    }
+    };
     
-};
 
 
 

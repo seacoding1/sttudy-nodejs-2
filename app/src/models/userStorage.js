@@ -42,6 +42,8 @@ class userStorage {
         return userInfo; 
     }
 
+    
+
 }
 
 module.exports = userStorage;

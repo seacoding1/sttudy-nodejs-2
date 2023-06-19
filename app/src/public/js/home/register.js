@@ -18,7 +18,7 @@ function register() {
     }
 
     const req = {
-        userName : userName.value,
+        name : userName.value,
         id : id.value,
         pw : pw.value,
     };

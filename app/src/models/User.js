@@ -7,7 +7,7 @@ class User {
         this.body = body;
     }
 
-    async login(){
+    async login(){ //async 
         //id와 pw라는 변수로 바로 받음
         // const { id, pw } = userStorage.getUsers("id", "pw");
         // console.log(id);
@@ -16,6 +16,7 @@ class User {
         //["1234", "1234", "1234"]
 
         const client = this.body;
+        
         const { id, pw } = await userStorage.getUserInfo(client.id);
 
         if(id) {
@@ -28,10 +29,16 @@ class User {
         
     }
 
-    register(){
+    async register(){
         const client = this.body;
-        const response = userStorage.save(client);
-        return response;
+        try{
+            const response = await userStorage.save(client);
+            return response;
+        } catch(err){
+            const a = { success : false, msg : err }; 
+            return a;
+        }
+        
     }
 
 

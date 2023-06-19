@@ -30,12 +30,12 @@ const process = {
 
     },
 
-    register : (req, res) => {
+    register : async (req, res) => {
 
         //요청한 값을 담은 객체(?)생성
         const user = new User(req.body);
         //user객체 안에 login메서드 실행한 값 담기
-        const response = user.register();
+        const response = await user.register();
         return res.json(response);
 
     }
